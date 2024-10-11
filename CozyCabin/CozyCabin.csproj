@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\Images\NewFolder\**" />
+    <Content Remove="wwwroot\Images\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\Images\NewFolder\**" />
+    <None Remove="wwwroot\Images\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\AddChalet.cshtml" />
+    <Content Remove="wwwroot\Images\chalet6\image.webp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\AddChalet.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\AddChalet.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\AddChalet.cshtml" />
+  </ItemGroup>
+
+</Project>

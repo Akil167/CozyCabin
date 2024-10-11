@@ -1,0 +1,67 @@
+﻿@page
+@model CozyCabin.Pages.LoginModel
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="~/css/Login.css">
+    <title>Cozy Cabin - Login</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+                <input type="number" placeholder="Phone Number">
+                <input type="text" placeholder="User Name">
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Confirm Password">
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <input type="text" placeholder="User Name">
+                <input type="password" placeholder="Password">
+                <!--<a href="#">Forget Your Password?</a>-->
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>New Here!</h1>
+                    <h4>Sign up and book your dream chalet getaway today.</h4>
+                    <br>
+                    <p>Already have an account?</p>
+                    <button class="hidden" id="login">Sign in here</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Welcome Back, Friend!</h1>
+                    <h4>Enter your personal details to access your account.</h4>
+                    <br>
+                    <p>Don't have an account?</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/js/Login.js"></script>
+</body>
+
+</html>

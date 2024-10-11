@@ -1,0 +1,94 @@
+﻿@page
+@model CozyCabin.Pages.ReservationModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chalet Booking Form</title>
+    <link rel="stylesheet" href="~/css/Reservation.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Chalet Booking</h2>
+
+        <div class="form-group">
+            <label for="customer-name">Customer Name</label>
+            <input type="text" id="customer-name" placeholder="" disabled>
+
+            <label for="chalet">Chalet</label>
+            <input type="text" id="chalet" placeholder="" disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="check-in">Check-in</label>
+            <input type="date" id="check-in" disabled>
+
+            <label for="check-out">Check-out</label>
+            <input type="date" id="check-out" disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="chalet-price">Chalet Price</label>
+            <input type="text" id="chalet-price" placeholder="" disabled>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="taxi-service" onclick="toggleTaxiService()">
+            <label for="taxi-service">Taxi Service</label>
+        </div>
+
+        <div class="form-group">
+            <label for="pickup-location">Pickup Location</label>
+            <input type="text" id="pickup-location" placeholder="Enter pickup location" disabled>
+
+            <label for="pickup-time">Pickup Time</label>
+            <input type="time" id="pickup-time" disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="choose-taxi">Choose Taxi</label>
+            <select id="choose-taxi" disabled>
+                <option value="standard"></option>
+                <option value="luxury"></option>
+                <option value="van"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="taxi-price">Taxi Price</label>
+            <input type="text" id="taxi-price" disabled>
+
+            <label for="total">Total</label>
+            <input id="total" type="text" disabled>
+        </div>
+
+        <div class="upload">
+            <label for="receipt-upload">Upload Transfer Receipt</label>
+            <input type="file" id="receipt-upload">
+        </div>
+
+        <div class="note">
+            *Note: You have 24h to pay and upload the transfer receipt; otherwise, your reservation will be cancelled.
+        </div>
+
+        <div class="status form-group">
+            <label for="status">Status</label>
+            <input type="text" id="status" placeholder="" disabled>
+        </div>
+
+        <button class="submit-btn">Submit</button><button class="cancel-btn">Cancel</button>
+    </div>
+
+
+
+    <script src="~/js/Reservation.js"></script>
+</body>
+
+</html>

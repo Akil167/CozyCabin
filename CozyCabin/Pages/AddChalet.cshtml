@@ -1,0 +1,68 @@
+﻿@page
+@model CozyCabin.Pages.AddChaletModel
+@{
+	Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Chalet</title>
+    <link rel="stylesheet" href="~/css/AddChalet.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Adding New Chalet</h2>
+
+        <div class="form-group">
+            <label for="chalet-name">Chalet Name</label>
+            <input type="text" id="chalet-name" placeholder="">
+
+            <label for="address">Address (city)</label>
+            <input type="text" id="address" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location">
+
+            <label for="chaletMainImage">Chalet Main Image</label>
+            <input type="file" id="chaletMainImage">
+        </div>
+
+        <div class="form-group-2">
+            <label for="description">Chalet Description</label>
+            <textarea rows="4" cols="50"></textarea>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="amenities">Amenities</label>
+            <input type="text" id="amenities" placeholder="">
+
+            <label for="noGuests">Number of Guests</label>
+            <input type="number" min="1" id="noGuests">
+        </div>
+
+
+        <div class="form-group">
+            <label for="price">Price/Night</label>
+            <input type="number" min="1" id="price">
+
+        </div>
+
+        <button class="submit-btn">Submit</button><button class="cancel-btn">Cancel</button>
+    </div>
+
+
+    <script src="~/js/Reservation.js"></script>
+</body>
+
+</html>

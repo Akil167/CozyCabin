@@ -1,0 +1,276 @@
+﻿@page
+@model CozyCabin.Pages.BeitSmar1Model
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chalet Booking Section</title>
+    <link rel="stylesheet" href="~/css/chaletDetailsPage.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap">
+
+</head>
+<body>
+
+    <nav>
+        <div class="nav__logo">
+            <!-- SVG Icon (Replace with your own SVG) -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="35" fill="currentColor" class="bi bi-houses" viewBox="0 0 16 16">
+                <path d="M5.793 1a1 1 0 0 1 1.414 0l.647.646a.5.5 0 1 1-.708.708L6.5 1.707 2 6.207V12.5a.5.5 0 0 0 .5.5.5.5 0 0 1 0 1A1.5 1.5 0 0 1 1 12.5V7.207l-.146.147a.5.5 0 0 1-.708-.708zm3 1a1 1 0 0 1 1.414 0L12 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l1.854 1.853a.5.5 0 0 1-.708.708L15 8.207V13.5a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 4 13.5V8.207l-.146.147a.5.5 0 1 1-.708-.708zm.707.707L5 7.207V13.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5V7.207z" />
+            </svg>
+            <h1>Cozy Cabin</h1>
+        </div>
+        <ul class="nav__links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#about">Chalets</a></li>
+            <li><a href="#contact">My Bookings</a></li>
+            <li><a href="/Login"><button class="btn nav__btn">Login</button></a></li>
+        </ul>
+
+    </nav>
+
+
+
+    <div class="content-wrapper">
+        <div class="left-content">
+            <p style="font-size: 30px;">
+                Beit Smar - Detached Cottage
+                <br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="blue" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                </svg><span style="font-size: 20px; font-weight: lighter;">Smar Jbeil</span>
+            </p>
+            <div class="container">
+
+
+
+
+                <div class="carousel-container">
+                    <div class="main-image">
+                        <button class="carousel-button prev" onclick="prevSlide()">❮</button>
+                        <img src="~/Images/chalet1/image1.jpg" alt="Main Image" class="carousel-item active">
+                        <img src="~/Images/chalet1/image2.jpg" alt="Main Image" class="carousel-item">
+                        <img src="~/Images/chalet1/image3.jpg" alt="Main Image" class="carousel-item">
+                        <img src="~/Images/chalet1/image4.jpg" alt="Main Image" class="carousel-item">
+                        <img src="~/Images/chalet1/image5.jpg" alt="Main Image" class="carousel-item">
+                        <img src="~/Images/chalet1/image6.jpg" alt="Main Image" class="carousel-item">
+                        <img src="~/Images/chalet1/image7.jpg" alt="Main Image" class="carousel-item">
+                        <img src="~/Images/chalet1/image8.jpg" alt="Main Image" class="carousel-item">
+                        <img src="~/Images/chalet1/image9.jpg" alt="Main Image" class="carousel-item">
+                        <button class="carousel-button next" onclick="nextSlide()">❯</button>
+                    </div>
+
+
+                    <div class="thumbnails-wrapper">
+                        <!-- <button class="thumb-nav prev" onclick="scrollThumbnails(-1)">&#10094;</button>-->
+                        <div class="thumbnails">
+                            <img class="thumbnail" src="~/Images/chalet1/image1.jpg" alt="Thumbnail 1" onclick="changeMainImage(0)">
+                            <img class="thumbnail" src="~/Images/chalet1/image2.jpg" alt="Thumbnail 2" onclick="changeMainImage(1)">
+                            <img class="thumbnail" src="~/Images/chalet1/image3.jpg" alt="Thumbnail 3" onclick="changeMainImage(2)">
+                            <img class="thumbnail" src="~/Images/chalet1/image4.jpg" alt="Thumbnail 4" onclick="changeMainImage(3)">
+                            <img class="thumbnail" src="~/Images/chalet1/image5.jpg" alt="Thumbnail 4" onclick="changeMainImage(4)">
+                            <img class="thumbnail" src="~/Images/chalet1/image6.jpg" alt="Thumbnail 4" onclick="changeMainImage(5)">
+                            <img class="thumbnail" src="~/Images/chalet1/image7.jpg" alt="Thumbnail 4" onclick="changeMainImage(6)">
+                            <img class="thumbnail" src="~/Images/chalet1/image8.jpg" alt="Thumbnail 4" onclick="changeMainImage(7)">
+                            <img class="thumbnail" src="~/Images/chalet1/image9.jpg" alt="Thumbnail 4" onclick="changeMainImage(8)">
+
+                        </div>
+                        <!--<button class="thumb-nav next" onclick="scrollThumbnails(1)">&#10095;</button>-->
+                    </div>
+
+                </div>
+
+
+
+                <table>
+                    <tr><th>OVERVIEW</th></tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="blue" class="bi bi-house" viewBox="0 0 16 13">
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+                            </svg>
+                            30m<sup>2</sup>
+                        </td>
+                        <td>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="blue" class="bi bi-people-fill" viewBox="0 0 16 13">
+                                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                            </svg>
+                            2 Guests
+                        </td>
+                        <td>🛏️ 1 Bedroom</td>
+                        <td>🛁 1 Bath</td>
+                    </tr>
+                </table>
+                <hr>
+
+
+                <table>
+                    <tr>
+                        <th>AMENITIES</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Wifi</td>
+                        <td>Outdoor Furniture</td>
+                        <td>Common Pool</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Air Conditioning</td>
+                        <td>Heating</td>
+                        <td>TV</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Microwave</td>
+                        <td>Kitchen</td>
+                        <td>Grill</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Hairdryer</td>
+                        <td>Iron</td>
+                        <td>Fridge</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Balcony</td>
+                        <td>Parking</td>
+                        <td>Fire extinguisher</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Towels</td>
+                        <td>Bed linen</td>
+                        <td>Closet</td>
+                    </tr>
+
+                </table>
+                <hr>
+                <table>
+                    <tr>
+                        <th>OUTDOOR</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Balcony</td>
+                        <td>Garden</td>
+                        <td>Common Pool</td>
+
+                    </tr>
+                </table>
+                <hr>
+                <table>
+                    <tr>
+                        <th>WHAT'S NEARBY</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Beach</td>
+                        <td>Batroun's historic Old Souk</td>
+                        <td></td>
+                    </tr>
+                </table>
+                <hr>
+                <table>
+                    <tr>
+                        <th>DESCRIPTION</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="3">
+                            Discover Alep Patio Cottage at Beit Smar Boutique Resort your getaway hub in Batroun midlands. Alep features a luxurious king bed, cozy sofa bed, kitchenettes, & private patios with pergolas & outdoor seating - ideal for those who cherish independence & tranquility. Located in the picturesque midlands of Batroun, Lebanon, this boutique resort is nestled amidst the renowned vineyards of Batroun, offering breathtaking views of the Mediterranean Sea and a stone's throw from the vibrant Old Souk.
+
+                            Connection, Nature & Serenity 🌿<br><br>
+
+                            Highlights:<br><br>
+
+                            🛏️ Luxurious Accommodation:<br>
+                            - King-size beds with fine linens<br>
+                            - Dual rain showers for a spa-like experience<br><br>
+
+                            🌅 Stunning Views:<br>
+                            - Majestic sea and valley views from private patios<br>
+                            - Perfect spots for enjoying sunrises and sunsets<br><br>
+
+                            🍳 Well-Equipped Kitchenettes:<br>
+                            - All the essentials for convenient self-catering<br><br>
+
+                            📍 Prime Location:<br>
+                            - Minutes away from Batroun's historic Old Souk<br><br>
+
+                            🌲 Tranquil Environment:<br>
+                            - Blend of culture, comfort, and nature<br>
+                            - Escape the hustle and bustle in a serene setting<br>
+                        </td>
+                    </tr>
+                </table>
+
+                <hr>
+                <table>
+                    <tr>
+                        <th>CHECK-IN</th>
+                        <td>From 3:00pm</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <hr>
+                <table>
+                    <tr>
+                        <th>CHECK-OUT</th>
+                        <td>Till 12:30pm</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <hr>
+                <table>
+                    <tr>
+                        <th style="color: black;">LOCATION</th>
+                    </tr>
+                    <tr>
+                        <td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2773.2706194805764!2d35.660638882817956!3d34.248718363179066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f58c9e13f541b%3A0x7b8d11f03d5f198!2sSawary%20Resort%20and%20Hotel!5e0!3m2!1sen!2slb!4v1723016070175!5m2!1sen!2slb" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <div class="availability-calendar">
+                <h5>📍 Smar Jbeil</h5>
+                <h5>30 m² Cabin ∙ 1 bedroom ∙ 2 guests</h5>
+                <!-- Your availability calendar content -->
+                <form>
+                    <label for="check-in">Check-in</label>
+                    <input type="date" id="check-in" name="check-in">
+
+                    <label for="check-out">Check-out</label>
+                    <input type="date" id="check-out" name="check-out">
+
+                    <div>Price per night<span style="margin-left: 30px; font-weight: bold;">150$</span></div>
+                    <div id="total-price"></div>
+                    <br>
+                    <a href><button type="submit">Reserve</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/chaletDetailsPage.js"></script>
+
+</body>
+</html>
+

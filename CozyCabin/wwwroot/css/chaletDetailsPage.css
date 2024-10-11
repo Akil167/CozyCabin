@@ -1,0 +1,451 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 0% 0%;
+    font-size: clamp(16px, 2vw, 20px);
+    left: 0;
+    right: 0;
+}
+
+
+
+/* Define CSS Variables for Consistent Styling */
+:root {
+    --primary-color: #30b3c9; /* Navigation Bar Background */
+    --secondary-color: #ffffff; /* Text and Icons */
+    --hover-color: #2352fa; /* Hover Effect Color */
+    --font-family: 'Montserrat', sans-serif;
+}
+
+/* Basic Reset 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+/* Logo Styling */
+.nav__logo {
+    display: flex;
+    align-items: center;
+}
+
+    .nav__logo svg {
+        margin-right: 10px;
+    }
+
+    .nav__logo h1 {
+        color: var(--secondary-color);
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+/* Navigation Links Styling */
+.nav__links {
+    list-style: none;
+    position: static;
+    transform: none;
+    display: flex;
+    gap: 30px;
+}
+
+    .nav__links li a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        font-size: 1.15rem;
+        transition: color 0.3s ease;
+        position: relative;
+        padding: 2rem;
+        top: 0.5rem;
+    }
+
+        .nav__links li a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: var(--secondary-color);
+            left: 0;
+            bottom: -4px;
+            transition: width 0.3s ease;
+        }
+
+        .nav__links li a:hover::after {
+            width: 100%;
+        }
+
+        .nav__links li a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+            font-size: 1.3rem;
+        }
+
+.btn {
+    padding: 0.4rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1.15rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    ;
+    /*color: var(--white);*/
+    color: var(--primary-color);
+    background-color: whitesmoke;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .btn:hover {
+        background-color: #4231f7;
+        color: var(--white);
+    }
+
+.nav__btn {
+    width: 100px;
+}
+
+
+
+
+
+
+/*Carousel css*/
+
+.carousel-container {
+    width: 100%;
+    height: 80vh;
+    min-height: 300px;
+    text-align: center;
+    position: relative; /* Important for arrow positioning */
+}
+
+.main-image {
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+
+    .main-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid #ddd;
+    }
+
+.carousel-item {
+    display: none;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+    .carousel-item.active {
+        display: block;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+
+.carousel-button {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 10%;
+    padding: 1rem 0.75rem;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 10;
+    transition: opacity 0.7s ease;
+}
+
+.main-image:hover .carousel-button {
+    opacity: 1;
+}
+
+
+.prev {
+    left: 10px;
+    top: 40%;
+}
+
+.next {
+    right: 10px;
+    top: 40%;
+}
+
+.thumbnails-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    padding-bottom: 5px;
+    position: relative;
+    width: 100%;
+    margin: 0.4rem auto;
+}
+
+
+.thumbnails {
+    display: inline-flex;
+    transition: transform 0.3s ease; /* Smooth scrolling effect */
+}
+
+.thumbnail {
+    width: 90px;
+    height: auto;
+    margin: 0 2.6px;
+    cursor: pointer;
+    border-radius: 7px;
+    border: 2px solid #ddd;
+    transition: border 0.3s;
+    flex: 0 0 auto;
+    opacity: 0.6;
+}
+
+.thumbnails .thumbnail:hover {
+    border: 2px solid #3083ff;
+    opacity: 1;
+}
+
+.thumbnails .thumbnail.selected {
+    border: 2px solid #3083ff; /* Border color for selected thumbnail */
+    opacity: 1; /* Ensures the selected thumbnail is fully opaque */
+}
+
+
+/*.thumb-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #0e93eb;
+    border: none;
+    font-size: 20px;
+    padding: 16px 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+    .thumb-nav.prev {
+        left: 0;
+        top: 50%;
+    }
+
+    .thumb-nav.next {
+        right: 0;
+        top: 50%;
+    }*/
+
+
+
+
+/*---------------------------------------------------------*/
+
+table {
+    border: 1;
+    width: 100%;
+}
+
+/*.container {
+  width: 60%;
+}*/
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.left-content {
+    width: 68%;
+    padding-right: 20px;
+}
+
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+td {
+    width: calc(80% / 4);
+    color: #646d7a;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 17px;
+}
+
+
+
+th {
+    color: #474e57;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 17px;
+    width: 20%;
+}
+
+.tdHalfWidth {
+    width: 70px;
+}
+
+hr {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+iframe {
+    width: 100%;
+    height: 300px; /* Adjust the height as needed */
+    border: none;
+}
+
+
+
+/* Availability calendar styling */
+
+.right-sidebar {
+    width: 32%;
+    position: relative;
+    margin-left: 0.5%;
+    top: 135px;
+}
+
+
+.availability-calendar {
+    height: 420px;
+    width: 95%;
+    background-color: #fff;
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 40px; /* Adjust this value to control the distance from the top of the viewport */
+}
+
+    /* Form styling */
+    .availability-calendar form {
+        display: flex;
+        flex-direction: column;
+        font-size: 15px;
+    }
+
+    .availability-calendar label {
+        font-size: 20px;
+        margin-bottom: 3px;
+        font-weight: bold; /* Make labels bold to stand out */
+        color: #333; /* Darker color for labels */
+    }
+
+
+    .availability-calendar input, .availability-calendar button {
+        margin-bottom: 15px;
+        padding: 10px;
+        font-size: 18px; /* Increase font size inside the inputs and button */
+        border: 1px solid #ddd; /* Lighter border color */
+        border-radius: 6px; /* Slightly larger border radius for rounded edges */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a 3D effect */
+    }
+
+
+
+    .availability-calendar button {
+        background-color: #30b3c9;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+        .availability-calendar button:hover {
+            background-color: #2352fa;
+        }
+
+
+
+
+
+@media (max-width: 768px) {
+    .left-content {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .carousel-container {
+        width: 70%;
+        height: auto;
+        margin-left: 17vw;
+    }
+
+    .right-sidebar {
+        width: 50%;
+    }
+
+    .carousel-container {
+        height: 70vh;
+    }
+
+    .availability-calendar {
+        width: 50%;
+        margin-left: 25vw;
+        padding: 5px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .thumbnails {
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .right-sidebar {
+        width: 100%;
+        position: relative;
+        top: 130px;
+        margin-left: 0;
+    }
+
+    .availability-calendar {
+        height: 410px;
+    }
+}
+ 

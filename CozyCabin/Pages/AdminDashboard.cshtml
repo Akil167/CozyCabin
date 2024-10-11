@@ -1,0 +1,145 @@
+﻿@page
+@model CozyCabin.Pages.AdminDashboardModel
+@using CozyCabin.Models;
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/AdminDashboard.css">
+    <title>Admin Dashboard</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="~/Images/chalet1/image1.jpg">
+                    <h2>Cozy<span style="color: #03b6fc;">Cabin</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">
+                        person_outline
+                    </span>
+                    <h3>New (Pending) Reservations</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        receipt_long
+                    </span>
+                    <h3>Customers</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        insights
+                    </span>
+                    <h3>Confirmed Reservations</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        mail_outline
+                    </span>
+                    <h3>Rejected Reservations</h3>
+                    <!--<span class="message-count">27</span>-->
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        inventory
+                    </span>
+                    <h3>Cancelled Reservations</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        add
+                    </span>
+                    <h3>Add New Chalet</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        settings
+                    </span>
+                    <h3>Settings</h3>   
+                </a>
+               
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+
+        <main>
+            
+             <!-- New Reservations Table -->
+            <div class="recent-orders">
+                <h2>New (Pending) Reservations</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Res-ID</th>
+                            <th>Customer</th>
+                            <th>Chalet</th>
+                            <th>Created At</th>
+                            <th>Transfer Receipt</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        @{
+                            foreach(Reservations res in Model.list)
+                            {
+                            <tr>
+                            <td>@res.reservationID</td>
+                            <td>@res.userID</td>
+                            <td>@res.chaletID</td>
+                            <td>@res.createdAt</td>
+                            
+                            <td>123456</td>
+                            <td>@res.status</td>
+                            <td><button type="button" class="btn btn-outline-success">Confirm</button></td>
+                            <td><button type="button" class="btn btn-outline-danger" >Reject</button></td>
+                            </tr>
+                            }
+                        }
+                        
+                    </tbody>
+                </table>
+                <a href="#">Show All</a>
+            </div>
+            <!-- End of Recent Orders -->
+
+
+        </main>
+
+
+
+    </div>
+</body>
+</html>

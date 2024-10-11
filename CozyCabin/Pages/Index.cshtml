@@ -1,0 +1,208 @@
+﻿@page
+@model IndexModel
+@using CozyCabin.Models;
+@{
+   
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <title>Cozy Cabin</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="overlay"></div>
+        <nav>
+            <div class="nav__bar">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="35" fill="currentColor" class="bi bi-houses" viewBox="0 0 16 16">
+                        <path d="M5.793 1a1 1 0 0 1 1.414 0l.647.646a.5.5 0 1 1-.708.708L6.5 1.707 2 6.207V12.5a.5.5 0 0 0 .5.5.5.5 0 0 1 0 1A1.5 1.5 0 0 1 1 12.5V7.207l-.146.147a.5.5 0 0 1-.708-.708zm3 1a1 1 0 0 1 1.414 0L12 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l1.854 1.853a.5.5 0 0 1-.708.708L15 8.207V13.5a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 4 13.5V8.207l-.146.147a.5.5 0 1 1-.708-.708zm.707.707L5 7.207V13.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5V7.207z" />
+                    </svg>
+                    Cozy Cabin
+                </div>
+                <div class="nav__menu__btn" id="menu-btn">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+            <ul class="nav__links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#chalets">Chalets</a></li>
+                <li><a href="#explore">My Bookings</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="/Login"><button class="btn nav__btn">Login</button></a>
+        </nav>
+        <div class="section__container header__container" id="home">
+            <p>Simple - Unique - Friendly</p>
+            <h1>Create Your Unforgettable Moments<br />At Our <span>Cozy Cabins</span>.</h1>
+        </div>
+    </header>
+
+    <section class="section__container booking__container">
+        <form action="/" class="booking__form">
+            <div class="input__group">
+                <span><i class="ri-location-fill"></i></span>
+                <div class="select__container">
+                    <label for="guest">WHERE</label>
+                    <select>
+                        <option>Batroun</option>
+                        <option>Tyre</option>
+                        <option>Fidar</option>
+                        <option>Ghassaneye</option>
+                        <option>Laqlouq</option>
+                        <option>Baskinta</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input__group">
+                <!--<span><i class="ri-calendar-2-fill"></i></span>-->
+                <div>
+                    <label for="check-in">CHECK-IN</label>
+                    <input type="date" placeholder="Check In" />
+                </div>
+            </div>
+            <div class="input__group">
+                <!--<span><i class="ri-calendar-2-fill"></i></span>-->
+                <div>
+                    <label for="check-out">CHECK-OUT</label>
+                    <input type="date" placeholder="Check Out" />
+                </div>
+            </div>
+            <div class="input__group">
+                <!--<span><i class="ri-user-fill"></i></span>-->
+                <div class="select__container">
+                    <label for="guest">GUEST</label>
+                    <select>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>10+</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input__group input__btn">
+                <button class="btn">CHECK OUT</button>
+            </div>
+        </form>
+    </section>
+
+
+    <section class="section__container about__container" id="about">
+        <div class="about__image">
+            <img src="~/Images/chalet1/image2.jpg" alt="about" />
+        </div>
+        <div class="about__content">
+            <p class="section__subheader">ABOUT US</p>
+            <h2 class="section__header">The Best Holidays Start Here!</h2>
+            <p class="section__description">
+                Welcome to Cozy Cabin, Your perfect getaway destination nestled in the heart of nature. Here at Cozy Cabin, we believe in providing an unforgettable experience, combining the beauty of the great outdoors with the comfort of luxurious accommodations.
+            </p>
+            <h3>Our Story</h3><p class="section__description">Cozy Cabin was born out of a passion for nature and a love for hospitality. Our founders, avid travelers and outdoor enthusiasts, recognized a need for a serene, secluded retreat where guests could escape the hustle and bustle of everyday life. With this vision in mind, Cozy Cabin was established, offering a unique blend of rustic charm and modern amenities.</p>
+          
+        </div>
+    </section>
+
+    <section class="section__container room__container" id="chalets">
+        <p class="section__subheader">OUR COZY CHALETS</p>
+        <h2 class="section__header">The Most Memorable Rest Time Starts Here.</h2>
+        <div class="room__grid">
+            @{
+                foreach (Chalet res in Model.list)
+                {
+            <div class="room__card">
+                <div class="room__card__image">
+                            <img src="<%= @res.chaletMainImage %>" alt="main image" />
+                    
+                </div>
+                       
+                <div class="room__card__details">
+                    <h4>@res.chaletName</h4>
+                    <p>
+                                <span>@res.address</span><span> . @res.noGuests Guests</span>
+                    </p>
+                    <h5> <span>@res.pricePerNight$/night</span></h5>
+                    <a href="/BeitSmar1"><button class="btn">View Chalet</button></a>
+                </div>
+            </div>
+}
+} 
+
+        </div>
+    </section>
+
+
+
+    <section class="section__container banner__container">
+        <div class="banner__content">
+            <div class="banner__card">
+                <h4>9</h4>
+                <p>Chalets Available</p>
+            </div>
+            <div class="banner__card">
+                <h4>350+</h4>
+                <p>Bookings Completed</p>
+            </div>
+            <div class="banner__card">
+                <h4>600+</h4>
+                <p>Happy Customers</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="explore" id="explore">
+        <p class="section__subheader">EXPLORE</p>
+        <h2 class="section__header">What's New Today.</h2>
+        <div class="explore__bg">
+            <div class="explore__content">
+                <p class="section__description">10th MAR 2023</p>
+                <h4>A New Menu Is Available In Our Hotel.</h4>
+                <button class="btn">Continue</button>
+            </div>
+        </div>
+    </section>
+
+
+   <!-- <footer>
+        <div class="footer-content">
+            <div><p>Cozy Cabin is an online chalet reservation website that saves time and effort, and that by allowing users to easily search for and compare chalets based on their preferences and requirements. With detailed descriptions, photos, and reviews, visitors can make informed decisions without the hassle of traditional booking methods.</p></div>
+            <div><p>&copy; 2024 Cozy Cabin. All Rights Reserved.</p></div>
+            <div> <p>For Further Assistance, Contact Us On Whatsapp: 0096170719798</p></div>
+        </div>
+     </footer>-->
+    <footer class="footer">
+        <div class="footer-segment ">
+            <h3>About Us</h3>
+            <p>Welcome to our cozy cabin retreat, where nature meets comfort. We offer a perfect escape to unwind and relax.</p>
+        </div>
+        <div class="footer-segment links">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">View Chalet</a></li>
+            </ul>
+        </div>
+        <div class="footer-segment contact">
+            <h3>Contact Us</h3>
+            <p>WhatsApp: <a href="tel:+14567890">+1 234 567 890</a></p>
+            <p>Email: <a href="mailto:info@cozycabin.com">info@cozycabin.com</a></p>
+        </div>
+        <p class="footer-bottom">© 2024 Cozy Cabin. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="site.js"></script>
+</body>
+</html>
+
